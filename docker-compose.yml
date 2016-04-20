@@ -1,3 +1,14 @@
-
-app:
-  build: .
+version: '2'
+services:
+  app:
+    build: .
+    ports:
+      - "18466-18470:18466-18470"
+    volumes_from:
+      - data
+    volumes:
+      - /OpenBazaar-Server/ob.cfg
+  data:
+    image: alpine
+    volumes:
+      - /root/.openbaazar

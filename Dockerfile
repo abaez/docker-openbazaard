@@ -10,7 +10,7 @@ RUN pip install --upgrade pip
 
 # Install build depends
 RUN apk add gcc libffi-dev python-dev make py-psutil zeromq-dev openssl-dev \
-  libc-dev pkgconfig libbsd-dev libsodium-dev autoconf libtool py-psutil \
+  libc-dev pkgconfig libbsd-dev libsodium-dev autoconf libtool \
   bsd-compat-headers
 
 # crypto install
@@ -23,6 +23,6 @@ RUN git clone -b v0.1.7 https://github.com/OpenBazaar/OpenBazaar-Server.git
 WORKDIR /OpenBazaar-Server
 RUN pip install -r requirements.txt
 
-ENTRYPOINT ["python", "openbazaard.py"]
+ENTRYPOINT ["/usr/bin/python", "openbazaard.py"]
 
 CMD ["start"]
