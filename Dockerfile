@@ -11,6 +11,12 @@ RUN pip install --upgrade pip
 # Install build depends
 RUN apk add gcc libffi-dev python-dev make py-psutil zeromq-dev openssl-dev
 
+# update
+RUN apk add libc-dev
+
+# clean cache
+RUN apk cache clean
+
 # clone openbazaard
 RUN git clone -b v0.1.7 https://github.com/OpenBazaar/OpenBazaar-Server.git
 
