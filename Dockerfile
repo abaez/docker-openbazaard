@@ -17,10 +17,11 @@ RUN apk add gcc libffi-dev python-dev make py-psutil zeromq-dev openssl-dev \
 RUN pip install cryptography
 
 # clone openbazaard
-RUN git clone -b v0.1.7 https://github.com/OpenBazaar/OpenBazaar-Server.git
+RUN git clone -b v0.1.7 https://github.com/OpenBazaar/OpenBazaar-Server.git \
+  /app
 
 # build install
-WORKDIR /OpenBazaar-Server
+WORKDIR /app
 RUN pip install -r requirements.txt
 
 ENTRYPOINT ["/usr/bin/python", "openbazaard.py"]
