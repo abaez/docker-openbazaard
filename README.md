@@ -35,7 +35,7 @@ The container uses openbazaard as an application to run. To run the container, y
 ``` bash
 docker run -v <path of ob.cfg>:/app/ob.cfg -P abaez/openbazaard
 ```
-The container has `CMD` designed to use `openbazaard.py` commands. you can find the commands that are available to use by running the help command:
+The container has `CMD` designed to use `openbazaard.py` commands. you can find the commands that are available to use in the [repository][6] or by running the help command:
 
 ```
 docker run abaez/openbazaard help
@@ -47,3 +47,4 @@ docker run abaez/openbazaard help
 [3p]: https://twitter.com/a_baez
 [4]: https://github.com/OpenBazaar/OpenBazaar-Server
 [5]: http://alpinelinux.org/
+[6]: https://github.com/OpenBazaar/OpenBazaar-Server#usage
