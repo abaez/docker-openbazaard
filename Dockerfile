@@ -2,6 +2,8 @@ FROM alpine
 
 MAINTAINER Alejandro Baez <https://twitter.com/a_baez>
 
+ENV OBSVER v0.1.7
+
 # Install predepends
 RUN apk -U add python py-pip git
 
@@ -17,7 +19,7 @@ RUN apk add gcc libffi-dev python-dev make py-psutil zeromq-dev openssl-dev \
 RUN pip install cryptography
 
 # clone openbazaard
-RUN git clone -b v0.1.7 https://github.com/OpenBazaar/OpenBazaar-Server.git \
+RUN git clone -b $OBSVER https://github.com/OpenBazaar/OpenBazaar-Server.git \
   /app
 
 # build install
