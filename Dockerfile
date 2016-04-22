@@ -26,6 +26,8 @@ RUN git clone -b $OBSVER https://github.com/OpenBazaar/OpenBazaar-Server.git \
 WORKDIR /app
 RUN pip install -r requirements.txt
 
+EXPOSE 18466-18470
+
 ENTRYPOINT ["/usr/bin/python", "openbazaard.py"]
 
 CMD ["start"]
